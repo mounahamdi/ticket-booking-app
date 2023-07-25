@@ -3,6 +3,7 @@ const cors = require('cors')
 const user = require('./routes/user.js')
 const ticket = require('./routes/ticket.js')
 const transportation = require('./routes/transportation.js')
+const trip = require('./routes/trip.js')
 const db = require('./models/index.js')
 
 const app = express()
@@ -13,6 +14,7 @@ app.use(cors())
 app.use('/user', user)
 app.use('/ticket', ticket)
 app.use('/transportation', transportation)
+app.use('/trip', trip)
 
 db.sequelize.sync() // Sync the models with the database
   .then(() => {
