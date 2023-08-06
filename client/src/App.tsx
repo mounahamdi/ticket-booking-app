@@ -1,17 +1,14 @@
-import { useState } from 'react'
+//import { useState } from 'react';
 import 'tailwindcss/tailwind.css';
 import Register from './components/Register';
-
+import Navbar from './components/Navbar';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    
-        <Register/>
-        
-    </>
+    <div>
+      <Navbar />
+      <Register />
+    </div>
   )
 }
 
