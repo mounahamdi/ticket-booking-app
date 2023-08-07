@@ -33,8 +33,11 @@ function reducer(state: StateType, action: { type: string; payload: string }) {
       return state;
   }
 }
+interface Props {
+  register: (obj:StateType) => void
+}
 
-export default function Register() {
+export default function Register({register}:Props) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
@@ -146,8 +149,8 @@ export default function Register() {
               <div className="flex items-center mt-4">
                 <button
                   onClick={(e) => {
-                    e.preventDefault()
-                    console.log(state)
+                    e.preventDefault();
+                    register(state)
                   }}
                   className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:bg-green-700"
                 >
