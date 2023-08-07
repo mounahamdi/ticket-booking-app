@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Footer from './Footer';
 
 interface Props {
     login: (email: string, password: string) => void;
@@ -72,6 +73,7 @@ export default function Login({ login }: Props) {
                     </a>
                 </p>
             </div>
+            <Footer />
         </div>
     );
 }

@@ -4,6 +4,7 @@ import Register from './components/Register';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Home from './components/Home';
+import Search from './components/Search';
 import axios from 'axios';
 import { Route, Routes } from 'react-router-dom';
 
@@ -22,18 +23,19 @@ function App() {
       .catch(err => { console.log(err.message) })
   }
 
-  const login = (email:string, password:string):void=>{
-    axios.post(`http://localhost:3000/user/login`, {email:email, password:password})
-    .then(res => console.log(res.data))
-    .catch(err => console.log(err.message))
+  const login = (email: string, password: string): void => {
+    axios.post(`http://localhost:3000/user/login`, { email: email, password: password })
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err.message))
   }
   return (
     <div>
       <Navbar />
       <Routes>
-        <Route path="/register" element={<Register register={register} />} />
-        <Route path="/login" element={<Login login={login}/>} />
         <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register register={register} />} />
+        <Route path="/login" element={<Login login={login} />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
     </div>
   )

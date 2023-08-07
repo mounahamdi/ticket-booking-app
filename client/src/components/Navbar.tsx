@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
             <nav className="flex items-center container mx-auto">
                 <div>
                     <Link to="/" className="text-green-500 italic text-4xl">
-                        Welcome to TunTrans
+                        Welcome to TransTun
                     </Link>
                 </div>
                 <ul className="list-none flex justify-center items-center ml-auto gap-5">

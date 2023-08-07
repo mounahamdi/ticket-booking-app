@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import ticket from '../assets/ticket.jpg';
+import Footer from "./Footer";
 
 interface StateType {
   name: string;
@@ -34,21 +35,22 @@ function reducer(state: StateType, action: { type: string; payload: string }) {
   }
 }
 interface Props {
-  register: (obj:StateType) => void
+  register: (obj: StateType) => void
 }
 
-export default function Register({register}:Props) {
+export default function Register({ register }: Props) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white-50">
-      <div className="w-1/2 p-6 flex flex-col items-center justify-center">
-        <h3 className="text-3xl text-center py-6 text-gray-700 font-semibold">Catch the Next Bus - Register & Book Your Ride!</h3>
-        <img className="max-h-full max-w-full" src={ticket} alt="Ticket" />
-      </div>
+    <div>
+      <div className="flex items-center justify-center min-h-screen bg-white-50">
+        <div className="w-1/2 p-6 flex flex-col items-center justify-center">
+          <h3 className="text-3xl text-center py-6 text-gray-700 font-semibold">Catch the Next Bus - Register & Book Your Ride!</h3>
+          <img className="max-h-full max-w-full" src={ticket} alt="Ticket" />
+        </div>
 
-      <div className="w-1/2 p-6">
-        <div className="w-full px-6 py-4 overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg">
+        <div className="w-1/2 p-6">
+          <div className="w-full px-6 py-4 overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg">
             <form>
               <div>
                 <label
@@ -64,7 +66,7 @@ export default function Register({register}:Props) {
                     }
                     type="text"
                     name="name"
-                    className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    className="block w-full px-4 py-2 mt-2 text-green-500 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                 </div>
               </div>
@@ -82,7 +84,7 @@ export default function Register({register}:Props) {
                     }
                     type="email"
                     name="email"
-                    className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    className="block w-full px-4 py-2 mt-2 text-green-500 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                 </div>
               </div>
@@ -100,7 +102,7 @@ export default function Register({register}:Props) {
                     }
                     type="tel"
                     name="phone"
-                    className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    className="block w-full px-4 py-2 mt-2 text-green-500 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                 </div>
               </div>
@@ -118,7 +120,7 @@ export default function Register({register}:Props) {
                     }
                     type="password"
                     name="password"
-                    className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    className="block w-full px-4 py-2 mt-2 text-green-500 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                 </div>
               </div>
@@ -139,7 +141,7 @@ export default function Register({register}:Props) {
                     }
                     type="password"
                     name="password_confirmation"
-                    className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    className="block w-full px-4 py-2 mt-2 text-green-500 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                 </div>
               </div>
@@ -190,5 +192,7 @@ export default function Register({register}:Props) {
           </div>
         </div>
       </div>
+      <Footer />
+    </div>
   );
 }
