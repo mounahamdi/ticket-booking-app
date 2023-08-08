@@ -2,11 +2,11 @@ import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     const navigateToSearch = () => {
-        navigate("/search");
-    };
+        navigate("/search")
+    }
 
     return (
         <div className="bg-gray-100 min-h-screen">

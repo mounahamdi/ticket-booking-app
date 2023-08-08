@@ -61,10 +61,8 @@ export default function Search () {
         </div>
       </section>
 
-      {/* Bus Search Results */}
       <section className="py-8">
         <div className="container mx-auto">
-          {/* Render bus search results here */}
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">Search Results</h2>
             <p>No results found.</p>

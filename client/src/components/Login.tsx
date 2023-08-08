@@ -27,7 +27,7 @@ export default function Login({ login }: Props) {
                             type="email"
                             value={email}
                             onChange={e => setEmail(e.target.value)}
-                            className="block w-full px-4 py-2 mt-2 text-green-500 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                            className="block w-full px-4 py-2 mt-2 text-gray-500 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
                         />
                     </div>
                     <div className="mb-2">
@@ -41,7 +41,7 @@ export default function Login({ login }: Props) {
                             type="password"
                             value={password}
                             onChange={e => setPassword(e.target.value)}
-                            className="block w-full px-4 py-2 mt-2 text-green-500 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                            className="block w-full px-4 py-2 mt-2 text-gray-500 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
                         />
                     </div>
                     <a
