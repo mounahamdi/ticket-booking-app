@@ -1,15 +1,25 @@
-import Footer from "./Footer";
 
+import React from 'react'
+const {useState}=React
+interface handleSearchType {
 
-export default function Search () {
+ handleSearch:(
+  departure:string,
+  destination:string)=>void
+}
+export default function Search ({handleSearch}:handleSearchType) {
+  const [departure,setDeparture]=useState<string>('')
+  const [destination,setDestination]=useState<string>('')
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div >
       <section className="py-16">
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-4">Find Your Bus Tickets</h2>
             <div className="bg-white p-4 rounded-lg shadow-md">
-              <form>
+              <form onSubmit={(e)=>{
+                e.preventDefault()
+                handleSearch(departure,destination)}}>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="fromCity" className="block font-medium mb-1">
@@ -18,9 +28,11 @@ export default function Search () {
                     <input
                       type="text"
                       id="fromCity"
+                      value={departure}
                       name="fromCity"
                       className="block w-full px-4 py-2 mt-2 text-green-500 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                      placeholder="Enter city or location"
+                      placeholder="departure city"
+                      onChange={(e)=>setDeparture(e.target.value)}
                     />
                   </div>
                   <div>
@@ -29,10 +41,12 @@ export default function Search () {
                     </label>
                     <input
                       type="text"
+                      value={destination}
                       id="toCity"
-                      name="toCity"
+                      name="destination"
                       className="block w-full px-4 py-2 mt-2 text-green-500 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                      placeholder="Enter city or location"
+                      placeholder="destination"
+                      onChange={(e)=>setDestination(e.target.value)}
                     />
                   </div>
                 </div>
@@ -49,6 +63,7 @@ export default function Search () {
                 </div>
                 <div className="mt-4">
                   <button
+                
                     type="submit"
                     className="w-full py-2 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg"
                   >
@@ -60,17 +75,7 @@ export default function Search () {
           </div>
         </div>
       </section>
-
-      <section className="py-8">
-        <div className="container mx-auto">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">Search Results</h2>
-            <p>No results found.</p>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
     </div>
   );
-};
+}
+
